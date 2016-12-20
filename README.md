@@ -14,7 +14,7 @@ npm install @waldo/node-kafka --save
 
 ### The Consumer
 
-The Consumer Constructor is a wrapper around the [kafka-rest package](https://github.com/confluentinc/kafka-rest-node) and it normalizes and smooths the behavior of the consuming operation.
+The Consumer Constructor is a wrapper around the [kafka-rest package](https://github.com/confluentinc/kafka-rest-node) and its main purpose is to abstract away the kafka-rest interface and cope with connection issues or topic-not-found type of errors behind the scenes. You can now focus on your business.
 
 The constructor requires an object as argument which has the following keys:
 
