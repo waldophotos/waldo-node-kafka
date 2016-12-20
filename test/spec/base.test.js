@@ -10,6 +10,8 @@ describe('Base API Surface', function() {
   it('should expose expected methods', function(){
     expect(kafkaLib).to.have.keys([
       'Consumer',
+      'Producer',
+      'setKafkaUrl',
     ]);
   });
 });
