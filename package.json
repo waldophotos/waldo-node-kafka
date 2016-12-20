@@ -10,7 +10,9 @@
     "email": "thanpolas@gmail.com",
     "url": "https://github.com/thanpolas"
   },
-  "contributors": [""],
+  "contributors": [
+    ""
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/waldo/waldo-node-kafka"
@@ -23,13 +25,15 @@
     "test": "./node_modules/.bin/grunt jshint:lib && ./node_modules/.bin/mocha -b test/spec -u bdd  -R spec"
   },
   "dependencies": {
-    "bluebird": "3.4.0",
-    "lodash": "4.13.1"
+    "bluebird": "3.4.6",
+    "kafka-rest": "0.0.4",
+    "lodash": "4.17.2"
   },
   "devDependencies": {
-    "grunt-release": "0.13.1",
-    "mocha": "2.5.3",
     "chai": "3.5.0",
-    "sinon": "1.17.4"
+    "grunt": "^1.0.1",
+    "grunt-release": "0.14.0",
+    "mocha": "3.2.0",
+    "sinon": "1.17.6"
   }
 }
