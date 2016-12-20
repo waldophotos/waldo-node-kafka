@@ -31,9 +31,7 @@ const consumer = kafkaLib.Consumer({
 });
 ```
 
-#### Instance methods
-
-##### Consumer.connect(opts)
+#### Consumer.connect(opts)
 
 This is the main entry point for consuming kafka messages. The method accepts one argument with options:
 
@@ -61,7 +59,7 @@ consumer.connect({
     })
 ```
 
-##### Consumer.dispose()
+#### Consumer.dispose()
 
 This will destroy the consumer instance safely shutting down the kafka consumer connection.
 
@@ -90,9 +88,7 @@ const producer = kafkaLib.Producer({
 });
 ```
 
-#### Instance methods
-
-##### Producer.produce(data)
+#### Producer.produce(data)
 
 Produces a log message to kafka using the provided data.
 
