@@ -4,6 +4,16 @@
 
 var tester = module.exports = {};
 
+/** @type {Object} simple logger */
+tester.log = {
+  info: function() {
+    console.log.apply(null, ['INFO:'].concat(arguments));
+  },
+  error: function() {
+    console.error.apply(null, ['ERROR:'].concat(arguments));
+  },
+};
+
 /**
  * Have a Cooldown period between tests.
  *
