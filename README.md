@@ -18,8 +18,9 @@ The Consumer Constructor is a wrapper around the [kafka-rest package](https://gi
 
 The constructor requires an object as argument which has the following keys:
 
-* `topic` **String** The Kafka topic the consumer will work on.
-* `log` **Object** A logger to use, must expose the `info` and `error` methods.
+* `topic` **String Required** The Kafka topic the consumer will work on.
+* `log` **Object Required** A logger to use, must expose the `info` and `error` methods.
+* `retryInterval` **Number** How long to wait before retrying a failed connection or topic not found problems, expressed in milliseconds, default: 10 seconds.
 
 ```js
 const kafkaLib = require('@waldo/node-kafka');
