@@ -123,7 +123,7 @@ Node Kafka library will resolve the kafka proxy url using the following rules:
 
 ## Release History
 
-- **v0.0.1**, *TBD*
+- **v0.0.1**, *21 Dec 2016*
     - Big Bang
 
 ## License
