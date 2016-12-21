@@ -7,10 +7,12 @@ var tester = module.exports = {};
 /** @type {Object} simple logger */
 tester.log = {
   info: function() {
-    console.log.apply(null, ['INFO:'].concat(arguments));
+    let args = Array.prototype.splice.call(arguments, 0);
+    console.log('INFO:', args.join(' '));
   },
   error: function() {
-    console.error.apply(null, ['ERROR:'].concat(arguments));
+    let args = Array.prototype.splice.call(arguments, 0);
+    console.log('ERROR:', args.join(' '));
   },
 };
 
