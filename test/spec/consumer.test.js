@@ -97,6 +97,9 @@ describe('Consumer tests', function() {
       });
 
       setTimeout(function() {
+
+        expect(consumer.connectRetries).to.be.at.least(2);
+
         // reset url so it connects
         kafkaLib.setKafkaUrl(null);
 
