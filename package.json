@@ -19,7 +19,7 @@
   },
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=4.x"
+    "node": ">=6.x"
   },
   "scripts": {
     "test": "mocha -b test/spec && echo 'running eslint...' ; eslint lib/** && echo 'all ok!'"
