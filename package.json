@@ -22,7 +22,7 @@
     "node": ">=6.x"
   },
   "scripts": {
-    "test": "mocha -b test/spec && echo 'running eslint...' ; eslint lib/** && echo 'all ok!'"
+    "test": "mocha -b test/spec && eslint lib/**"
   },
   "dependencies": {
     "bluebird": "^3.4.6",
