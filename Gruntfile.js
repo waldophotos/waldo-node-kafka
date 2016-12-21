@@ -2,7 +2,7 @@
 
 module.exports = function (grunt) {
   // Load all grunt tasks
-  require('load-grunt-tasks')(grunt);
+  grunt.task.loadNpmTasks('grunt-release');
 
   // Project configuration.
   grunt.initConfig({
