@@ -48,7 +48,6 @@ describe('Producer tests', function() {
       });
     });
 
-
     it('Should give up after 5 retries', function() {
       kafkaLib.setKafkaUrl('http://localhost:6666');
 
@@ -77,7 +76,7 @@ describe('Producer tests', function() {
             throw err;
           }
 
-          expect(err.retries).to.equal(6);
+          expect(err.retries).to.equal(5);
           expect(err.source.message).to.equal('connect ECONNREFUSED 127.0.0.1:6666');
         });
     });
