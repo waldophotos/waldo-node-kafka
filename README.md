@@ -28,7 +28,7 @@ The constructor requires an object as argument which has the following keys:
 const kafkaLib = require('@waldo/node-kafka');
 const logger = require('./logger'); // bunyan logger
 
-const consumer = kafkaLib.Consumer({
+const consumer = new kafkaLib.Consumer({
     topic: 'the-kafka-topic',
     log: logger,
 });
@@ -86,7 +86,7 @@ const kafkaLib = require('@waldo/node-kafka');
 const logger = require('./logger'); // bunyan logger
 const topicSchema = require('./schema');
 
-const producer = kafkaLib.Producer({
+const producer = new kafkaLib.Producer({
     topic: 'the-kafka-topic',
     schema: topicSchema,
     log: logger,
