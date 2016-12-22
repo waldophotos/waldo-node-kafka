@@ -124,6 +124,8 @@ Node Kafka library will resolve the kafka proxy url using the following rules:
 ## Release History
 
 - **v0.0.3**, *22 Dec 2016*
+    - Will detect and handle a Kafka disconnect by resetting the consumer and retrying to connect.
+    - Will now log kafka proxy url on consumer connect.
     - Fixed consumer dispose method failing when a connection has not been established.
 - **v0.0.2**, *22 Dec 2016*
     - Added SIGTERM listener for proper shutdown as well.
