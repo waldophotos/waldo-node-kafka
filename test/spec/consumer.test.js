@@ -119,6 +119,25 @@ describe('Consumer tests', function() {
         },
       });
     });
-  });
 
+
+    it.only('Should dispose when still not connected', function(done) {
+      kafkaLib.setKafkaUrl('http://localhost:6666');
+
+      // Use random new name to force "Topic not found." error
+      let topic = 'node-kafka-rest-' + Date.now();
+
+      let consumer = new kafkaLib.Consumer({
+        topic: topic,
+        log: tester.log,
+        retryInterval: 1000,
+      });
+
+      setTimeout(() => {
+        consumer.dispose()
+          .then(done)
+          .catch(done);
+      }, 500);
+    });
+  });
 });
