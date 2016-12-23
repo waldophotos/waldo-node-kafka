@@ -1,6 +1,6 @@
 {
   "name": "@waldo/node-kafka",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "./lib/boot",
   "description": "Kafka library for Node.",
   "homepage": "https://github.com/waldo/waldo-node-kafka",
