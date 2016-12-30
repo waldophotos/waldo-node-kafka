@@ -6,7 +6,7 @@ const expect = chai.expect;
 
 const tester = require('../lib/tester.lib');
 const kafkaLib = require('../..');
-const schemaFix = require('../fixtures/kafka-schema.fix');
+const schemaFix = require('../fixtures/kafka-schema.fix.json');
 
 const kafkaConnect = require('../../lib/kafka-connect');
 
@@ -26,6 +26,7 @@ describe('Producer tests', function() {
       let producer = new kafkaLib.Producer({
         topic: topic,
         log: tester.log,
+        keySchema: { type: 'string' },
         schema: schemaFix,
         retryTimes: 5,
         retryInterval: 1000,
@@ -44,7 +45,10 @@ describe('Producer tests', function() {
       }, 3000);
 
       return producer.produce({
-        foo: 'bar',
+        key: 'foo',
+        value: {
+          foo: 'bar'
+        }
       });
     });
 
@@ -57,13 +61,17 @@ describe('Producer tests', function() {
       let producer = new kafkaLib.Producer({
         topic: topic,
         log: tester.log,
+        keySchema: { type: 'string' },
         schema: schemaFix,
         retryTimes: 5,
         retryInterval: 300,
       });
 
       return producer.produce({
-        foo: 'bar',
+        key: 'foo',
+        value: {
+          foo: 'bar'
+        }
       })
         .then(function() {
           // should not be here
@@ -79,6 +87,32 @@ describe('Producer tests', function() {
           expect(err.retries).to.equal(5);
           expect(err.source.message).to.equal('connect ECONNREFUSED 127.0.0.1:6666');
         });
+    });
+
+    it('should produce successfully', function () {
+      kafkaLib.setKafkaUrl('http://localhost:8082');
+
+      const topic = 'noda-kafka-rest-test-success';
+
+      const producer = new kafkaLib.Producer({
+        topic: topic,
+        log: tester.log,
+        keySchema: { type: 'string' },
+        schema: schemaFix,
+        retryTimes: 5,
+        retryInterval: 300,
+      });
+
+      return producer.produce({
+        key: 'success',
+        value: {
+          foo: 'bar'
+        }
+      }).then(res => {
+        expect(res.offsets.length).to.equal(1);
+      }).catch(err => {
+        throw err
+      });
     });
   });
 
