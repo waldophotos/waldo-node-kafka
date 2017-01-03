@@ -17,7 +17,28 @@ describe('Producer tests', function() {
   });
 
   describe('Nominal behaviors', function() {
-    it('should produce successfully', function () {
+    it('should produce successfully without schema key', function () {
+      kafkaLib.setKafkaUrl('http://localhost:8082');
+
+      const topic = 'noda-kafka-rest-test-success';
+
+      const producer = new kafkaLib.Producer({
+        topic: topic,
+        log: tester.log,
+        schema: schemaFix,
+        retryTimes: 5,
+        retryInterval: 300,
+      });
+
+      return producer.produce({
+        foo: 'bar',
+      }).then(res => {
+        expect(res.offsets.length).to.equal(1);
+      }).catch(err => {
+        throw err;
+      });
+    });
+    it('should produce successfully with schema key', function () {
       kafkaLib.setKafkaUrl('http://localhost:8082');
 
       const topic = 'noda-kafka-rest-test-success';
