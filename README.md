@@ -125,6 +125,10 @@ Node Kafka library will resolve the kafka proxy url using the following rules:
 
 ## Release History
 
+- **v0.0.7**, *30 Dec 2016*
+    - Require specifying a key schema and message key.
+- **v0.0.5**, *23 Dec 2016*
+    - Fixed bug where subsequent calls to `kafkaConnect.connect()` would not return KAFKA_PROXY_URL as expected.
 - **v0.0.3**, *22 Dec 2016*
     - Will detect and handle a Kafka disconnect by resetting the consumer and retrying to connect.
     - Will now log kafka proxy url on consumer connect.
