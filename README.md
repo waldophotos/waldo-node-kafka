@@ -141,6 +141,14 @@ Node Kafka library will resolve the kafka proxy url using the following rules:
 2. Check if there is any value set on the env variable `KAFKA_REST_PROXY_URL`.
 3. Use the default `http://127.0.0.1:8082` address.
 
+## Releasing
+
+1. Update the changelog bellow.
+1. Ensure you are on master.
+1. Type: `grunt release`
+* `grunt release:minor` for minor number jump.
+    * `grunt release:major` for major number jump.
+
 ## Release History
 
 - **v0.0.7**, *30 Dec 2016*
