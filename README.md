@@ -90,7 +90,7 @@ const topicSchema = require('./schema');
 const producer = new kafkaLib.Producer({
     topic: 'the-kafka-topic',
     schema: topicSchema,
-    keySchema: { type: 'string' }
+    keySchema: { type: 'string' },
     log: logger,
 });
 ```
