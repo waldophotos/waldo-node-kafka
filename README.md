@@ -127,6 +127,7 @@ producer.produce(value)
 When the producer fails, it will reject with an Error instance which contains these two additional properties:
 
 * `source` **Error** The original error thrown by kafka-rest.
+* `topic` **String** The name of the topic the producer would produce.
 * `retries` **Number** How many times producer tried to produce the log message.
 
 ### Helper methods
@@ -151,6 +152,9 @@ Node Kafka library will resolve the kafka proxy url using the following rules:
 
 ## Release History
 
+- **v0.0.8**, *04 Jan 2017*
+    - Enriched log messages to include topic name.
+    - Producer error now returns topic name as well.
 - **v0.0.7**, *30 Dec 2016*
     - Require specifying a key schema and message key.
 - **v0.0.5**, *23 Dec 2016*
