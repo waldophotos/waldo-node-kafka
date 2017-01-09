@@ -152,6 +152,8 @@ Node Kafka library will resolve the kafka proxy url using the following rules:
 
 ## Release History
 
+- **v0.0.10**, *09 Jan 2017*
+    - Will now exit the application after capturing and handling the SIGINT and SIGTERM events.
 - **v0.0.9**, *05 Jan 2017*
     - Producer's error logs will now include the retry count.
 - **v0.0.8**, *04 Jan 2017*
