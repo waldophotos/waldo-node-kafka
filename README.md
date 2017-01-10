@@ -2,6 +2,8 @@
 
 > Kafka library for Node.
 
+[![CircleCI](https://circleci.com/gh/waldophotos/waldo-node-kafka.svg?style=svg&circle-token=779140ad9cf7a7f1e7a224e37821dce0a724d578)](https://circleci.com/gh/waldophotos/waldo-node-kafka)
+
 ## Install
 
 Install the module using NPM:
