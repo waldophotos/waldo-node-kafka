@@ -3,6 +3,7 @@
  */
 const chai = require('chai');
 const expect = chai.expect;
+const Promise = require('bluebird');
 
 const tester = require('../lib/tester.lib');
 const kafkaLib = require('../..');
@@ -60,6 +61,7 @@ describe('Producer tests', function() {
       }).then(res => {
         expect(res.offsets.length).to.equal(1);
       }).catch(err => {
+        console.log('TEST ERROR:', err.stack);
         throw err;
       });
     });
@@ -91,6 +93,7 @@ describe('Producer tests', function() {
         // hack producer instance
         producer.kafka = kafkaConnect.kafka;
         producer.kafkaTopic = producer.kafka.topic(producer.topic);
+        producer._produce = Promise.promisify(producer.kafkaTopic.produce.bind(producer.kafkaTopic));
       }, 3000);
 
       return producer.produce({
