@@ -154,6 +154,8 @@ Node Kafka library will resolve the kafka proxy url using the following rules:
 
 ## Release History
 
+- **v0.1.1**, *20 Jan 2017*
+    - Will now log the message to be produced if produce fails.
 - **v0.1.0**, *18 Jan 2017*
     - If no key-schema is defined then the producer will omit it as an invoking argument.
     - Refactored producer so it uses promisification instead of node callbacks.
